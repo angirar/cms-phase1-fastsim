@@ -1,0 +1,22 @@
+# How to install
+
+```
+cmsrel CMSSW_9_4_0
+cd CMSSW_9_4_0/src
+cmsenv
+git init
+git remote add origin git remote add origin https://github.com/angirar/cms-phase1-fastsim.git
+git pull origin master
+scram b -rj32
+
+```
+
+# How to run
+
+```
+Single Muon Pt10 gun
+
+cmsDriver.py SingleMuPt10_pythia8_cfi --conditions 94X_mc2017_design_IdealBS_v5 --fast -n 2000 --era Run2_2017 --datatier AODSIM,DQMIO --eventcontent AODSIM,DQM -s GEN,SIM,RECOBEFMIX,DIGI:pdigi_valid,RECO,VALIDATION:tracksValidationTrackingOnly --beamspot Realistic50ns13TeVCollision --python_filename fastsim.py --fileout fastsim.root 
+
+
+
